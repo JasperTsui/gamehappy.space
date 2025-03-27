@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Monster Survivors online - an exciting action-packed survival game where you battle endless waves of monsters. Free to play on GameHappy.space!">
-    <meta name="keywords" content="Monster Survivors, online games, survival games, action games, free games">
-    <meta name="author" content="GameHappy.space">
-    <title>Monster Survivors | Battle Endless Monster Waves | GameHappy.space</title>
-    <link rel="canonical" href="https://gamehappy.space" />
+    <meta name="description" content="Play free online games at GameHappy - Your source for the best browser games">
+    <meta name="keywords" content="online games, browser games, free games, action games, puzzle games">
+    <meta name="author" content="GameHappy">
+    <title>GameHappy - Play Free Online Games</title>
+    <link rel="canonical" href="/" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -48,128 +48,203 @@
                 height: 75vh;
             }
         }
+
+        .game-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .game-card.active {
+            border-color: #007AFF;
+            box-shadow: 0 0 0 2px #007AFF;
+        }
+        
+        .category-tab {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .category-tab.active {
+            border-bottom-color: #007AFF;
+            color: #007AFF;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.3);
+        }
+
+        .play-overlay {
+            transition: opacity 0.3s ease;
+        }
+        
+        .game-card:hover .play-overlay {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .game-iframe {
+            z-index: 10;
+        }
     </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-58RX1HT76F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-58RX1HT76F');
+</script>
 </head>
 <body class="bg-gray-50 text-gray-900">
-    <header class="bg-gradient-to-r from-apple-blue to-apple-indigo text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6 md:py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-4 md:mb-0">
-                    <a href="/" class="text-2xl font-bold tracking-tight">GameHappy.space</a>
+    <!-- Top Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.html" class="text-2xl font-bold text-apple-blue">GameHappy.space</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Games
+                        </a>
+                        <a href="index.html#gameplay" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Gameplay
+                        </a>
+                        <a href="index.html#about" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                    </div>
                 </div>
-                <nav class="flex space-x-4">
-                    <a href="#gameplay" class="hover:text-apple-yellow transition-colors">Gameplay</a>
-                    <a href="#features" class="hover:text-apple-yellow transition-colors">Features</a>
-                    <a href="#tips" class="hover:text-apple-yellow transition-colors">Tips</a>
-                </nav>
             </div>
+        </div>
+    </nav>
+
+    <!-- Main Hero Banner -->
+    <header class="bg-gradient-to-r from-apple-blue to-apple-indigo text-white">
+        <div class="container mx-auto px-4 py-12 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">
+                <span class="inline-block mx-auto max-w-4xl">Experience the best collection of free online games</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light mb-6">No downloads required!</p>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <section class="mb-12 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-blue">Monster Survivors</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-apple-darkgray">
-                Survive against endless waves of monsters in this action-packed strategic survival game!
-            </p>
-            
-            <div class="game-container w-full mx-auto border-4 border-apple-blue rounded-lg overflow-hidden shadow-xl">
-                <iframe 
-                    src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" 
-                    class="w-full h-full" 
-                    frameborder="0" 
-                    allow="fullscreen" 
-                    allowfullscreen
-                    title="Monster Survivors Game">
-                </iframe>
-            </div>
-            
-            <div class="mt-6 flex justify-center">
-                <button class="bg-apple-green hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-bold text-lg shadow-md transform transition hover:scale-105">
-                    Play Fullscreen
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Game Categories Navigation -->
+        <div class="mb-8">
+            <!-- 第一行分类 -->
+            <div class="flex space-x-4 mb-4">
+                <button class="filter-button px-6 py-2.5 bg-white text-gray-700 rounded-full hover:bg-gray-50 transition-all border-2 border-gray-200" data-category="popular" data-active-class="bg-apple-blue text-white border-apple-blue">
+                    Popular
                 </button>
+                <button class="filter-button px-6 py-2.5 bg-white text-gray-700 rounded-full hover:bg-gray-50 transition-all border-2 border-gray-200" data-category="latest" data-active-class="bg-apple-green text-white border-apple-green">
+                    Latest
+                </button>
+            </div>
+            <!-- 第二行分类 -->
+            <div class="flex flex-wrap gap-3">
+                <button class="filter-button px-4 py-2 bg-white text-gray-700 rounded-full hover:bg-gray-50 transition-all border-2 border-gray-200" data-category="action" data-active-class="bg-apple-red text-white border-apple-red">
+                    Action
+                </button>
+                <button class="filter-button px-4 py-2 bg-white text-gray-700 rounded-full hover:bg-gray-50 transition-all border-2 border-gray-200" data-category="shooter" data-active-class="bg-apple-blue text-white border-apple-blue">
+                    Shooter
+                </button>
+                <button class="filter-button px-4 py-2 bg-white text-gray-700 rounded-full hover:bg-gray-50 transition-all border-2 border-gray-200" data-category="strategy" data-active-class="bg-apple-green text-white border-apple-green">
+                    Strategy
+                </button>
+                <button class="filter-button px-4 py-2 bg-white text-gray-700 rounded-full hover:bg-gray-50 transition-all border-2 border-gray-200" data-category="adventure" data-active-class="bg-apple-purple text-white border-apple-purple">
+                    Adventure
+                </button>
+                <button class="filter-button px-4 py-2 bg-white text-gray-700 rounded-full hover:bg-gray-50 transition-all border-2 border-gray-200" data-category="racing" data-active-class="bg-apple-orange text-white border-apple-orange">
+                    Racing
+                </button>
+                <button class="filter-button px-4 py-2 bg-white text-gray-700 rounded-full hover:bg-gray-50 transition-all border-2 border-gray-200" data-category="puzzle" data-active-class="bg-apple-yellow text-white border-apple-yellow">
+                    Puzzle
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Selection Section -->
+        <section id="games" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-apple-blue border-b-2 border-apple-blue pb-2">
+                All Games
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Monster Survivors -->
+                <a href="games/monster-survivors.html" class="game-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="popular action">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="monster survivals.png" alt="Monster Survivors" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">Monster Survivors</h3>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-gray-500 text-sm">0 visits</span>
+                                <span class="px-3 py-1 bg-apple-red/10 text-apple-red text-sm rounded-full">Action</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">Survive endless waves of monsters in this thrilling action game.</p>
+                    </div>
+                </a>
+                
+                <!-- Giant Rush -->
+                <a href="games/giant-rush.html" class="game-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="latest action">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="images/giant-rush.png.png" alt="Giant Rush" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">Giant Rush</h3>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-gray-500 text-sm">0 visits</span>
+                                <span class="px-3 py-1 bg-apple-red/10 text-apple-red text-sm rounded-full">Action</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">Run and jump through exciting levels in this action-packed game.</p>
+                    </div>
+                </a>
             </div>
         </section>
 
         <section id="gameplay" class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 text-apple-purple border-b-2 border-apple-purple pb-2">
-                Gameplay Overview
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <p class="mb-4">
-                        <strong>Monster Survivors</strong> is an intense action survival game where your goal is simple yet challenging: stay alive as long as possible while facing waves of increasingly difficult monsters.
-                    </p>
-                    <p class="mb-4">
-                        As you progress, you'll collect power-ups, unlock new abilities, and face stronger enemies. Your strategy and quick reflexes will determine how long you can survive in this monster-infested world.
-                    </p>
-                    <p>
-                        The game combines elements of roguelike progression with action-packed combat, creating an addictive gameplay loop that keeps you coming back for "just one more run."
-                    </p>
-                </div>
-                <div class="bg-gradient-to-br from-apple-teal/10 to-apple-blue/10 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold mb-4 text-apple-blue">How To Play</h3>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>Use WASD or arrow keys to move your character</li>
-                        <li>Automatically attack nearby monsters</li>
-                        <li>Collect experience gems to level up</li>
-                        <li>Choose new abilities and upgrades when leveling up</li>
-                        <li>Survive as long as possible against endless waves</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="mb-12">
             <h2 class="text-3xl font-bold mb-6 text-apple-orange border-b-2 border-apple-orange pb-2">
                 Game Features
             </h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                     <div class="text-apple-red text-3xl mb-3">🏆</div>
-                    <h3 class="text-xl font-semibold mb-2">Roguelike Progression</h3>
-                    <p>Each run is unique with random power-ups and enemy patterns. The longer you survive, the more powerful you become.</p>
+                    <h3 class="text-xl font-semibold mb-2">Progress & Achievements</h3>
+                    <p>Track your progress and unlock achievements as you master each game in our collection.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                     <div class="text-apple-orange text-3xl mb-3">💥</div>
-                    <h3 class="text-xl font-semibold mb-2">Diverse Abilities</h3>
-                    <p>Unlock and upgrade a wide variety of attacks and passive abilities to create your own unique build each game.</p>
+                    <h3 class="text-xl font-semibold mb-2">Instant Play</h3>
+                    <p>No downloads or installations required - play instantly in your browser on any device.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                    <div class="text-apple-green text-3xl mb-3">👾</div>
-                    <h3 class="text-xl font-semibold mb-2">Monster Variety</h3>
-                    <p>Face dozens of different monster types, each with unique behaviors and attack patterns to challenge your skills.</p>
+                    <div class="text-apple-green text-3xl mb-3">🎮</div>
+                    <h3 class="text-xl font-semibold mb-2">Diverse Game Library</h3>
+                    <p>From action and adventure to puzzles and strategy - find your perfect game in our growing library.</p>
                 </div>
             </div>
         </section>
 
-        <section id="tips" class="mb-12">
+        <section id="about" class="mb-12">
             <h2 class="text-3xl font-bold mb-6 text-apple-yellow border-b-2 border-apple-yellow pb-2">
-                Tips & Strategies
+                About GameHappy.space
             </h2>
             <div class="bg-gradient-to-r from-apple-yellow/10 to-apple-orange/10 p-6 rounded-lg">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4 text-apple-orange">Beginner Tips</h3>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li>Focus on movement first - staying alive is your priority</li>
-                            <li>Collect all experience gems to level up faster</li>
-                            <li>Area damage abilities help clear groups of weaker enemies</li>
-                            <li>Don't get cornered - always keep an escape route open</li>
-                            <li>Learn each enemy's attack pattern and behavior</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4 text-apple-red">Advanced Strategies</h3>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li>Create synergistic builds by combining complementary abilities</li>
-                            <li>Prioritize tougher enemies while managing smaller monsters</li>
-                            <li>Movement speed upgrades provide both offensive and defensive advantages</li>
-                            <li>Use terrain and obstacles to funnel enemies into tight groups</li>
-                            <li>Know when to retreat and reposition during intense waves</li>
-                        </ul>
-                    </div>
-                </div>
+                <p class="mb-4">
+                    GameHappy.space is your destination for free, high-quality browser games that you can play anytime, anywhere. Our mission is to bring joy through gaming without the hassle of downloads, registrations, or installations.
+                </p>
+                <p>
+                    We carefully select and host games from talented developers around the world, ensuring a diverse library that caters to all types of players - from casual gamers looking for a quick break to dedicated players seeking more challenging experiences.
+                </p>
             </div>
         </section>
     </main>
@@ -178,9 +253,9 @@
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                    <h2 class="text-xl font-bold mb-4">About GameHappy.space</h2>
+                    <h2 class="text-xl font-bold mb-4">GameHappy.space</h2>
                     <p class="text-gray-300">
-                        GameHappy.space is dedicated to bringing you the best free online games to play directly in your browser. No downloads, no installations - just instant fun!
+                        Your go-to destination for free online browser games. No downloads, no installations - just instant fun!
                     </p>
                 </div>
                 <div>
@@ -200,18 +275,136 @@
     </footer>
 
     <script>
-        // JavaScript for fullscreen functionality
-        document.querySelector('button').addEventListener('click', function() {
-            const iframe = document.querySelector('iframe');
+        // 当前选中的分类
+        let selectedCategory = null;
+        let selectedTag = null;
+
+        // Function to filter games by category
+        function filterGamesByCategory(category) {
+            const gameCards = document.querySelectorAll('.game-card');
+            const filterButtons = document.querySelectorAll('.filter-button');
             
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.webkitRequestFullscreen) { /* Safari */
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { /* IE11 */
-                iframe.msRequestFullscreen();
-            }
+            // 更新按钮状态
+            filterButtons.forEach(button => {
+                if (button.dataset.category === category) {
+                    button.classList.remove('bg-gray-100');
+                    button.classList.add(button.dataset.activeClass);
+                } else {
+                    button.classList.remove('bg-apple-blue', 'bg-apple-green', 'bg-apple-purple', 'bg-apple-red', 'bg-apple-orange', 'bg-apple-yellow');
+                    button.classList.add('bg-white');
+                }
+            });
+            
+            // 过滤游戏卡片
+            gameCards.forEach(card => {
+                const cardCategories = card.dataset.category.split(' ');
+                if (category === 'all' || cardCategories.includes(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+        
+        // Add event listeners to filter buttons
+        document.querySelectorAll('.filter-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.dataset.category;
+                
+                // 如果点击的是当前选中的按钮，则取消选中
+                if (selectedCategory === category) {
+                    selectedCategory = null;
+                    this.classList.remove(this.dataset.activeClass);
+                    this.classList.add('bg-white');
+                    // 显示所有游戏
+                    document.querySelectorAll('.game-card').forEach(card => {
+                        card.classList.remove('hidden');
+                    });
+                } else {
+                    // 选中新的分类
+                    selectedCategory = category;
+                    filterGamesByCategory(category);
+                }
+            });
         });
+
+        // 游戏 iframe 切换功能
+        function toggleGameIframe(element, gameId) {
+            const thumbnail = element.querySelector('.game-thumbnail');
+            const iframe = element.querySelector('.game-iframe');
+            const overlay = element.querySelector('.play-overlay');
+            
+            if (thumbnail.classList.contains('hidden')) {
+                // 如果缩略图是隐藏的，说明正在显示游戏，需要切回缩略图
+                thumbnail.classList.remove('hidden');
+                iframe.classList.add('hidden');
+                overlay.classList.remove('hidden');
+                // 停止游戏（通过重置 src）
+                iframe.src = iframe.src;
+            } else {
+                // 如果缩略图是显示的，需要切换到游戏
+                thumbnail.classList.add('hidden');
+                iframe.classList.remove('hidden');
+                overlay.classList.add('hidden');
+            }
+        }
+    </script>
+
+    <script type="module">
+        import GameStats from './stats.js';
+        
+        // 更新游戏标签
+        function updateGameTags() {
+            const gameCards = document.querySelectorAll('.game-card');
+            gameCards.forEach(card => {
+                const gameId = card.getAttribute('href').replace('games/', '').replace('.html', '');
+                const tags = GameStats.getGameTags(gameId);
+                const stats = GameStats.getGameStats(gameId);
+                
+                // 更新访问统计
+                GameStats.updateGameStats(gameId);
+                
+                // 更新标签显示
+                const tagContainer = card.querySelector('.flex.items-center.justify-between');
+                const existingTags = tagContainer.querySelectorAll('.px-2.py-1');
+                existingTags.forEach(tag => tag.remove());
+                
+                // 添加新标签
+                tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = `px-2 py-1 text-sm rounded ml-2 ${
+                        tag === 'popular' ? 'bg-apple-blue/10 text-apple-blue' : 
+                        tag === 'latest' ? 'bg-apple-green/10 text-apple-green' : 
+                        'bg-apple-red/10 text-apple-red'
+                    }`;
+                    tagElement.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+                    tagContainer.appendChild(tagElement);
+                });
+                
+                // 更新访问量显示
+                const statsElement = card.querySelector('.text-gray-500');
+                if (statsElement) {
+                    statsElement.textContent = `${stats.totalVisits} visits`;
+                }
+            });
+        }
+        
+        // 页面加载时更新标签
+        document.addEventListener('DOMContentLoaded', updateGameTags);
+        
+        // 更新过滤按钮
+        function updateFilterButtons() {
+            const filterButtons = document.querySelectorAll('.filter-button');
+            filterButtons.forEach(button => {
+                const category = button.dataset.category;
+                if (category === 'featured') {
+                    button.style.display = 'none'; // 隐藏 Featured 按钮
+                }
+            });
+        }
+        
+        // 页面加载时更新过滤按钮
+        document.addEventListener('DOMContentLoaded', updateFilterButtons);
     </script>
 </body>
 </html> 
